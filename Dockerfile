@@ -13,7 +13,7 @@ COPY . ./
  
 # Build the app.
 # RUN ./mvnw -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
-RUN ./gradlew clean build -x test
+RUN ./gradlew clean build
  
  
 # Run the app by dynamically finding the JAR file in the target directory
