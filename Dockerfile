@@ -10,7 +10,7 @@ WORKDIR /app
 # Copy local code to the container image.
 COPY . ./
  
-RUN chmod +x gradlew
+RUN chmod 755 gradlew
  
 # Build the app.
 # RUN ./mvnw -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
