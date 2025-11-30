@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import com.perfulandia.ms_db_client.model.dto.DTOPedido;
+
 /**
  * Controlador que actúa también como implementación de la Clase ServiceClient.
  */
@@ -17,6 +19,12 @@ public class controllerClient {
 
     @Autowired
     private serviceClient serviceClient;
+
+    // ✅ Nuevo endpoint para crear pedidos
+    @PostMapping("/orders")
+    public DTOPedido createOrder(@RequestBody DTOPedido pedido) {
+        return serviceClient.createOrder(pedido);
+    }
 
     @GetMapping("")
     public List<DTOClient> getAllClients() {
@@ -31,6 +39,12 @@ public class controllerClient {
     @PostMapping("")
     public DTOClient saveClient(@RequestBody DTOClient dtoClient) {
         return serviceClient.saveClient(dtoClient);
+    }
+
+    // ✅ Nuevo endpoint para Login
+    @PostMapping("/login")
+    public DTOClient login(@RequestBody DTOClient loginRequest) {
+        return serviceClient.login(loginRequest.getEmail(), loginRequest.getPassword());
     }
 
     @PutMapping("/{id}")

@@ -11,7 +11,7 @@ import lombok.ToString;
  * Entidad que representa a un cliente en la base de datos.
  */
 @Entity
-@Table(name = "client")
+@Table(name = "usuarios")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -23,16 +23,25 @@ public class entityClient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Nombre del cliente (no nulo)
-    @Column(name = "name_client", nullable = false)
-    private String nameClient;
+    @Column(name = "nombre", nullable = false)
+    private String nombre;
 
-    // Correo electrónico (no nulo)
-    @Column(name = "email_client", nullable = false)
-    private String emailClient;
+    @Column(name = "apellido", nullable = false)
+    private String apellido;
 
-    // Teléfono del cliente (no nulo)
-    @Column(name = "phone_client", nullable = false)
-    private String phoneClient;
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
+    @Column(name = "password", nullable = false)
+    private String password;
+
+    @Column(name = "telefono")
+    private String telefono;
+
+    @Column(name = "region", nullable = false)
+    private String region;
+
+    @Column(name = "comuna", nullable = false)
+    private String comuna;
 
 }

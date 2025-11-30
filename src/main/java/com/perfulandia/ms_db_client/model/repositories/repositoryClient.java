@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface repositoryClient extends JpaRepository<entityClient, Long> {
-    // Aquí podrías agregar métodos personalizados si lo necesitas, como:
-    // List<entityClient> findByEmailClient(String emailClient);
+    
+    // Buscar usuario por email (necesario para el login)
+    java.util.Optional<entityClient> findByEmail(String email);
 }
