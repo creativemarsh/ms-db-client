@@ -31,9 +31,9 @@ public class serviceClient {
     @Autowired
     private repositoryDetallePedido repoDetalle;
 
-    // ... (Métodos existentes de clientes) ...
 
-    // ✅ Crear un nuevo pedido
+
+    //  Crear un nuevo pedido
     public DTOPedido createOrder(DTOPedido dtoPedido) {
         // 1. Guardar el pedido principal
         entityPedido pedido = new entityPedido();
